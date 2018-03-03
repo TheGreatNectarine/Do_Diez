@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Practice02
 {
@@ -23,6 +13,15 @@ namespace Practice02
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            TextBox txtBox = sender as TextBox;
+            if (txtBox.Text.Length != 0)
+            {
+                txtBox.Text = string.Empty;
+            }
         }
     }
 }

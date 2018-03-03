@@ -1,0 +1,15 @@
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\bin\Debug\Practice02.exe.config
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\bin\Debug\Practice02.exe
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\bin\Debug\Practice02.pdb
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02.csprojResolveAssemblyReference.cache
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\MainWindow.g.cs
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\App.g.cs
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02_MarkupCompile.cache
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02_MarkupCompile.lref
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\MainWindow.baml
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02.g.resources
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02.Properties.Resources.resources
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02.csproj.GenerateResource.Cache
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02.csproj.CoreCompileInputs.cache
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02.exe
+C:\Users\nickmarhal\source\repos\Practice02\Practice02\obj\Debug\Practice02.pdb
