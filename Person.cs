@@ -7,7 +7,7 @@ namespace Practice02
         private string _firstName;
         private string _lastName;
         private string _email;
-        private DateTime? _dateOfBirth;
+        private DateTime _dateOfBirth;
         private readonly string[] _westernSigns = { "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Saggitarius", "Capricorn" };
         private readonly string[] _chineseSigns = { "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig" };
 
@@ -24,7 +24,7 @@ namespace Practice02
             _firstName = firstName;
             _lastName = lastName;
             _email = email;
-            _dateOfBirth = null;
+            _dateOfBirth = DateTime.MinValue;
         }
 
         public Person(string firstName, string lastName, DateTime dateOfBirth)
@@ -41,7 +41,7 @@ namespace Practice02
             {
                 var today = DateTime.Today;
                 var a = (today.Year * 100 + today.Month) * 100 + today.Day;
-                var b = (_dateOfBirth?.Year * 100 + _dateOfBirth?.Month) * 100 + _dateOfBirth?.Day;
+                var b = (_dateOfBirth.Year * 100 + _dateOfBirth.Month) * 100 + _dateOfBirth.Day;
                 return (a - b) / 10000 >= 18;
             }
         }
@@ -50,8 +50,8 @@ namespace Practice02
         {
             get
             {
-                int day = _dateOfBirth?.Day ?? DateTime.Today.DayOfYear;
-                int month = _dateOfBirth?.Month ?? DateTime.Today.Month;
+                int day = _dateOfBirth.Day;
+                int month = _dateOfBirth.Month;
                 //Not used variable
 
                 if (month == 1 || month == 4)
@@ -73,7 +73,7 @@ namespace Practice02
         {
             get
             {
-                var date = _dateOfBirth?.Year ?? DateTime.Today.Year;
+                var date = _dateOfBirth.Year;
                 return _chineseSigns[(date - 5) % 12];
             }
         }
@@ -82,8 +82,13 @@ namespace Practice02
         {
             get
             {
-                return _dateOfBirth?.DayOfYear == DateTime.Today.DayOfYear;
+                return _dateOfBirth.DayOfYear == DateTime.Today.DayOfYear;
             }
         }
+
+        public string FirstName { get => _firstName; set => _firstName = value; }
+        public string LastName { get => _lastName; set => _lastName = value; }
+        public string Email { get => _email; set => _email = value; }
+        public DateTime DateOfBirth{ get => _dateOfBirth; set => _dateOfBirth = value; }
     }
 }
