@@ -1,4 +1,4 @@
-﻿<Window x:Class="Practice02.MainWindow"
+﻿<Window Name="mainWindow" x:Class="Practice02.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -28,14 +28,19 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Button Grid.Row="0" Grid.Column="0" Content="Proceed" Grid.ColumnSpan="2" Margin="0,0,1,0">
+        <Button Name="proceedButton" IsEnabled="{Binding Source=ToEnableButton}" Grid.Row="0" Grid.Column="0" Content="Proceed" Grid.ColumnSpan="2" Margin="0,0,1,0">
             <Button.Style>
-                <Style>
+                <Style TargetType="{x:Type Button}">
                     <Setter Property="Button.Background" Value="#66B089"/>
                     <Setter Property="Button.FontFamily" Value="Consolas"/>
                     <Setter Property="Button.FontSize" Value="16"/>
                     <Setter Property="Button.Foreground" Value="White"/>
                     <Setter Property="Button.BorderBrush" Value="#66B089"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Red"/>
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
             </Button.Style>
         </Button>
@@ -59,7 +64,7 @@
                 </Style>
             </Label.Style>
         </Label>
-        <TextBox GotKeyboardFocus="TextBox_GotKeyboardFocus" Grid.Row="2" Grid.Column="0" Text="First Name*" VerticalContentAlignment="Center" Margin="0,10,5,10" Padding="5,0,0,0">
+        <TextBox Name="firstNameTxtBox" GotKeyboardFocus="TextBox_GotFocusFirstName" LostKeyboardFocus="TextBox_LostFocusFirstName" Grid.Row="2" Grid.Column="0" Text="First Name*" VerticalContentAlignment="Center" Margin="0,10,5,10" Padding="5,0,0,0">
             <TextBox.Style>
                 <Style>
                     <Setter Property="TextBox.Background" Value="#2C373E"/>
@@ -70,7 +75,7 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <TextBox GotKeyboardFocus="TextBox_GotKeyboardFocus" Grid.Row="2" Grid.Column="1" Text="Last Name*" VerticalContentAlignment="Center" Margin="5,10,0,10" Padding="5,0,0,0">
+        <TextBox Name="lastNameTxtBox" GotKeyboardFocus="TextBox_GotFocusLastName" LostKeyboardFocus="TextBox_LostFocusLastName" Grid.Row="2" Grid.Column="1" Text="Last Name*" VerticalContentAlignment="Center" Margin="5,10,0,10" Padding="5,0,0,0">
             <TextBox.Style>
                 <Style>
                     <Setter Property="TextBox.Background" Value="#2C373E"/>
@@ -81,7 +86,7 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <TextBox GotKeyboardFocus="TextBox_GotKeyboardFocus" Grid.Row="3" Text="Email Address*" VerticalContentAlignment="Center" Margin="0,10,0,10" Padding="5,0,0,0" Grid.ColumnSpan="2">
+        <TextBox Name="emailTxtBox" GotKeyboardFocus="TextBox_GotFocusEmail" LostKeyboardFocus="TextBox_LostFocusEmail" Grid.Row="3" Text="Email Address*" VerticalContentAlignment="Center" Margin="0,10,0,10" Padding="5,0,0,0" Grid.ColumnSpan="2">
             <TextBox.Style>
                 <Style>
                     <Setter Property="TextBox.Background" Value="#2C373E"/>
@@ -92,8 +97,8 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <TextBox GotKeyboardFocus="TextBox_GotKeyboardFocus" Grid.Row="4" Text="Set a Password*" VerticalContentAlignment="Center" Margin="0,10,0,10" Padding="5,0,0,0" Grid.ColumnSpan="2">
-            <TextBox.Style>
+        <!--<PasswordBox Name="passwordBox" GotKeyboardFocus="TextBox_GotFocusPassword" LostKeyboardFocus="TextBox_LostFocusPassword" Grid.Row="4" Text="Set a Password*" VerticalContentAlignment="Center" Margin="0,10,0,10" Padding="5,0,0,0" Grid.ColumnSpan="2">
+            <PasswordBox.Style>
                 <Style>
                     <Setter Property="TextBox.Background" Value="#2C373E"/>
                     <Setter Property="TextBox.BorderThickness" Value="1"/>
@@ -101,15 +106,17 @@
                     <Setter Property="TextBox.FontSize" Value="20"/>
                     <Setter Property="Button.FontFamily" Value="Consolas"/>
                 </Style>
-            </TextBox.Style>
-        </TextBox>
-        <DatePicker Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Pick a Date" Margin="0,10,0,10">
+            </PasswordBox.Style>
+        </PasswordBox>-->
+        <DatePicker Name="birthdayDatePicker" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,10">
             <DatePicker.Style>
                 <Style>
                     <Setter Property="DatePicker.FontFamily" Value="Tahoma"/>
                     <Setter Property="DatePicker.FontSize" Value="22"/>
-                    <!--<Setter Property="DatePicker.Foreground" Value="White"/>-->
-                    <Setter Property="DatePicker.BorderThickness" Value="0"/>
+                    <Setter Property="DatePicker.Background" Value="White"/>
+                    <Setter Property="DatePicker.Foreground" Value="#7FD1D1D1"/>
+                    <Setter Property="DatePicker.Opacity" Value="1"/>
+                    <Setter Property="DatePicker.BorderThickness" Value="1"/>
                     <Setter Property="DatePicker.FontFamily" Value="Consolas"/>
                 </Style>
             </DatePicker.Style>
