@@ -32,30 +32,17 @@
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Button.Background" Value="#66B089"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
                     <Setter Property="Button.FontSize" Value="16"/>
                     <Setter Property="Button.Foreground" Value="White"/>
                     <Setter Property="Button.BorderBrush" Value="#66B089"/>
                 </Style>
             </Button.Style>
         </Button>
-        <!--<Button Grid.Row="0" Grid.Column="1" Content="Log In">
-            <Button.Style>
-                <Style>
-                    <Setter Property="Button.Background" Value="#495259"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
-                    <Setter Property="Button.FontSize" Value="16"/>
-                    <Setter Property="Button.Foreground" Value="#FFD1D1D1"/>
-                    <Setter Property="Button.BorderBrush" Value="#495259"/>
-                </Style>
-            </Button.Style>
-        </Button>-->
         <Label Grid.Row="1" Grid.Column="0" Content="First Name*"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,41,0,0">
             <Label.Style>
                 <Style>
                     <Setter Property="Label.FontSize" Value="25"/>
                     <Setter Property="Label.Foreground" Value="White"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
                 </Style>
             </Label.Style>
         </Label>
@@ -64,7 +51,6 @@
                 <Style>
                     <Setter Property="Label.FontSize" Value="25"/>
                     <Setter Property="Label.Foreground" Value="White"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
                 </Style>
             </Label.Style>
         </Label>
@@ -75,7 +61,6 @@
                     <Setter Property="TextBox.BorderThickness" Value="1"/>
                     <Setter Property="TextBox.Foreground" Value="#7FD1D1D1"/>
                     <Setter Property="TextBox.FontSize" Value="20"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
                 </Style>
             </TextBox.Style>
         </TextBox>
@@ -86,7 +71,6 @@
                     <Setter Property="TextBox.BorderThickness" Value="1"/>
                     <Setter Property="TextBox.Foreground" Value="#7FD1D1D1"/>
                     <Setter Property="TextBox.FontSize" Value="20"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
                 </Style>
             </TextBox.Style>
         </TextBox>
@@ -95,7 +79,6 @@
                 <Style>
                     <Setter Property="Label.FontSize" Value="25"/>
                     <Setter Property="Label.Foreground" Value="White"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
                 </Style>
             </Label.Style>
         </Label>
@@ -106,31 +89,17 @@
                     <Setter Property="TextBox.BorderThickness" Value="1"/>
                     <Setter Property="TextBox.Foreground" Value="#7FD1D1D1"/>
                     <Setter Property="TextBox.FontSize" Value="20"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <!--<PasswordBox Name="passwordBox" GotKeyboardFocus="TextBox_GotFocusPassword" LostKeyboardFocus="TextBox_LostFocusPassword" Grid.Row="4" Text="Set a Password*" VerticalContentAlignment="Center" Margin="0,10,0,10" Padding="5,0,0,0" Grid.ColumnSpan="2">
-            <PasswordBox.Style>
-                <Style>
-                    <Setter Property="TextBox.Background" Value="#2C373E"/>
-                    <Setter Property="TextBox.BorderThickness" Value="1"/>
-                    <Setter Property="TextBox.Foreground" Value="#7FD1D1D1"/>
-                    <Setter Property="TextBox.FontSize" Value="20"/>
-                    <Setter Property="Button.FontFamily" Value="Consolas"/>
-                </Style>
-            </PasswordBox.Style>
-        </PasswordBox>-->
         <DatePicker Name="DateOfBirth" SelectedDate="{Binding DateOfBirth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,10">
             <DatePicker.Style>
                 <Style>
-                    <Setter Property="DatePicker.FontFamily" Value="Tahoma"/>
                     <Setter Property="DatePicker.FontSize" Value="22"/>
                     <Setter Property="DatePicker.Background" Value="White"/>
                     <Setter Property="DatePicker.Foreground" Value="#7FD1D1D1"/>
                     <Setter Property="DatePicker.Opacity" Value="1"/>
                     <Setter Property="DatePicker.BorderThickness" Value="1"/>
-                    <Setter Property="DatePicker.FontFamily" Value="Consolas"/>
                 </Style>
             </DatePicker.Style>
         </DatePicker>
@@ -140,6 +109,7 @@
     <Window.Style>
         <Style TargetType="{x:Type Window}">
             <Setter Property="Background" Value="{StaticResource WindowBrush}"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
         </Style>
     </Window.Style>
 </Window>
