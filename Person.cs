@@ -62,10 +62,40 @@ namespace Practice02
             }
         }
 
-        public string FirstName { get => _firstName; set => _firstName = value; }
-        public string LastName { get => _lastName; set => _lastName = value; }
-        public string Email { get => _email; set => _email = value; }
-        public DateTime DateOfBirth { get => _dateOfBirth; set => _dateOfBirth = value; }
+        public string FirstName
+        {
+            get { return _firstName; }
+            set
+            {
+                _firstName = value;
+            }
+        }
+        public string LastName
+        {
+            get { return _lastName; }
+            set
+            {
+                _lastName = value;
+            }
+        }
+        public string Email
+        {
+            get { return _email; }
+            set
+            {
+                SignInValidator.ValidateEmail(this);
+                _email = value;
+            }
+        }
+        public DateTime DateOfBirth
+        {
+            get { return _dateOfBirth; }
+            set
+            {
+                SignInValidator.ValidateBirthday(this);
+                _dateOfBirth = value;
+            }
+        }
 
         public Person(string firstName, string lastName, string email, DateTime dateOfBirth)
         {
@@ -73,6 +103,7 @@ namespace Practice02
             _lastName = lastName;
             _email = email;
             _dateOfBirth = dateOfBirth;
+            new SignInValidator(this);
         }
 
         public Person(string firstName, string lastName, string email)
@@ -81,6 +112,7 @@ namespace Practice02
             _lastName = lastName;
             _email = email;
             _dateOfBirth = DateTime.MinValue;
+            new SignInValidator(this);
         }
 
         public Person(string firstName, string lastName, DateTime dateOfBirth)
@@ -89,6 +121,7 @@ namespace Practice02
             _lastName = lastName;
             _dateOfBirth = dateOfBirth;
             _email = null;
+            new SignInValidator(this);
         }
 
     }

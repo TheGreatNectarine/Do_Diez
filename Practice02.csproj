@@ -58,6 +58,7 @@
     <Compile Include="FutureBirthdayException.cs" />
     <Compile Include="InvalidEmailException.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="SignInValidator.cs" />
     <Compile Include="SignInViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

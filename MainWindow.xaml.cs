@@ -18,18 +18,43 @@ namespace Practice02
 
         private void ShowResultView()
         {
+            var user = ValidUser();
+            if (user == null)
+            {
+                MessageBox.Show("Incorrect person was created. Try again");
+                return;
+            }
+            var bday = user.IsBirthday ? "Happy Birthday" : "";
+            MessageBox.Show(
+                $"Name: {user.FirstName}\n" +
+                $"Surname: {user.LastName}\n" +
+                $"Email: {user.Email}\n" +
+                $"Date of birth: {user.DateOfBirth}\n" +
+                $"Adult: {user.IsAdult}\n" +
+                $"Sign: {user.SunSign}\n" +
+                $"Chinese Sign: {user.ChineseSign}\n" +
+                $"{bday}"
+            );
+        }
+
+        private Person ValidUser()
+        {
             var data = DataContext as SignInViewModel;
-            var user = new Person(data.FirstName, data.LastName, data.Email, data.DateOfBirth);
-            var adult = DateTime.Today.Year - user.DateOfBirth.Year > 18 ? "Yes" : "No";
-            var bday = user.IsBirthday ? "Happy Birthday":"";
-            MessageBox.Show($"Name: {user.FirstName}\n" +
-                            $"Surname: {user.LastName}\n" +
-                            $"Email: {user.Email}\n" +
-                            $"Date of birth: {user.DateOfBirth}\n" +
-                            $"Adult: {user.IsAdult}\n" +
-                            $"Sign: {user.SunSign}\n" +
-                            $"Chinese Sign: {user.ChineseSign}\n" +
-                            $"{bday}");
+            Person user = null;
+            try
+            {
+                user = new Person(data.FirstName, data.LastName, data.Email, data.DateOfBirth);
+            } catch (FutureBirthdayException e)
+            {
+                MessageBox.Show(e.Message);
+            } catch (DistantPastBirthdayException e)
+            {
+                MessageBox.Show(e.Message);
+            } catch (InvalidEmailException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return user;
         }
 
         private void ShowView(UIElement element)
