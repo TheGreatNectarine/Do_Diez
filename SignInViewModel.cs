@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,11 +15,6 @@ namespace Practice02
         private DateTime _dateOfBirth;
         private RelayCommand _signInCommand;
         private readonly Action _signInSuccessAction;
-
-        public SignInViewModel(Action signInSuccessAction)
-        {
-            _signInSuccessAction = signInSuccessAction;
-        }
 
         public string FirstName
         {
@@ -75,6 +67,11 @@ namespace Practice02
                                 IsDateValid(_dateOfBirth)));
 
             }
+        }
+
+        public SignInViewModel(Action signInSuccessAction)
+        {
+            _signInSuccessAction = signInSuccessAction;
         }
 
         private bool IsDateValid(DateTime date)

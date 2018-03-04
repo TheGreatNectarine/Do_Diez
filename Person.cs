@@ -11,30 +11,6 @@ namespace Practice02
         private readonly string[] _westernSigns = { "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Saggitarius", "Capricorn" };
         private readonly string[] _chineseSigns = { "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig" };
 
-        public Person(string firstName, string lastName, string email, DateTime dateOfBirth)
-        {
-            _firstName = firstName;
-            _lastName = lastName;
-            _email = email;
-            _dateOfBirth = dateOfBirth;
-        }
-
-        public Person(string firstName, string lastName, string email)
-        {
-            _firstName = firstName;
-            _lastName = lastName;
-            _email = email;
-            _dateOfBirth = DateTime.MinValue;
-        }
-
-        public Person(string firstName, string lastName, DateTime dateOfBirth)
-        {
-            _firstName = firstName;
-            _lastName = lastName;
-            _dateOfBirth = dateOfBirth;
-            _email = null;
-        }
-
         public bool IsAdult
         {
             get
@@ -89,6 +65,31 @@ namespace Practice02
         public string FirstName { get => _firstName; set => _firstName = value; }
         public string LastName { get => _lastName; set => _lastName = value; }
         public string Email { get => _email; set => _email = value; }
-        public DateTime DateOfBirth{ get => _dateOfBirth; set => _dateOfBirth = value; }
+        public DateTime DateOfBirth { get => _dateOfBirth; set => _dateOfBirth = value; }
+
+        public Person(string firstName, string lastName, string email, DateTime dateOfBirth)
+        {
+            _firstName = firstName;
+            _lastName = lastName;
+            _email = email;
+            _dateOfBirth = dateOfBirth;
+        }
+
+        public Person(string firstName, string lastName, string email)
+        {
+            _firstName = firstName;
+            _lastName = lastName;
+            _email = email;
+            _dateOfBirth = DateTime.MinValue;
+        }
+
+        public Person(string firstName, string lastName, DateTime dateOfBirth)
+        {
+            _firstName = firstName;
+            _lastName = lastName;
+            _dateOfBirth = dateOfBirth;
+            _email = null;
+        }
+
     }
 }

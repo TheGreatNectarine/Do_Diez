@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice02
 {
@@ -10,6 +6,11 @@ namespace Practice02
     {
         private string _message;
         private DateTime? _receivedDate;
+
+        public override string Message
+        {
+            get => _message;
+        }
 
         public FutureBirthdayException(string message)
         {
@@ -26,11 +27,6 @@ namespace Practice02
         {
             _receivedDate = badDate;
             _message = message;
-        }
-
-        public override string Message
-        {
-            get => _message;
         }
     }
 }
